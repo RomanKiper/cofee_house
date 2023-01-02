@@ -1,3 +1,4 @@
+from django.contrib.auth.mixins import LoginRequiredMixin
 from datetime import datetime
 
 from django.views.generic import TemplateView, ListView
@@ -13,10 +14,11 @@ class AboutTemplateView(TemplateView):
     template_name = 'main/about.html'
 
 
-class ProductListView(ListView):
+class ProductListView(LoginRequiredMixin, ListView):
     template_name = 'main/products.html'
     context_object_name = 'products'
     model = Product
+    login_url = '/signin/'
 
     def get_queryset(self):
         from itertools import zip_longest

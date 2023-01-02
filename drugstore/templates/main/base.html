@@ -34,6 +34,12 @@
                         <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="{% url 'about' %}">О НАС</a></li>
                         <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="{% url 'products' %}">ПРОДУКТЫ</a></li>
                         <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="{% url 'store' %}">КОНТАКТЫ/РАСПИСАНИЕ</a></li>
+                        {% if not user.is_authenticated %}
+                        <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="{% url 'signup' %}">РЕГИСТАРЦИЯ</a></li>
+                        <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="{% url 'signin' %}">АВТОРИЗАЦИЯ</a></li>
+                        {% else %}
+                        <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="{% url 'logout' %}">ВЫЙТИ</a></li>
+                        {% endif %}
                     </ul>
                 </div>
             </div>

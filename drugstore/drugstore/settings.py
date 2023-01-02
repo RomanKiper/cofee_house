@@ -30,6 +30,8 @@ ALLOWED_HOSTS = []
 
 
 # Application definition
+LOGIN_REDIRECT_URL = 'index'
+LOGOUT_REDIRECT_URL = 'index'
 
 INSTALLED_APPS = [
     "django.contrib.admin",
@@ -39,6 +41,7 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     "main.apps.MainConfig",
+    "registration.apps.RegistrationConfig"
 ]
 
 MIDDLEWARE = [
