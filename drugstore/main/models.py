@@ -35,7 +35,9 @@ class Product(models.Model):
     )
     image = models.ImageField(
         upload_to='products/',
-        verbose_name='картинка'
+        verbose_name='картинка',
+        null=True,
+        blank=True
     )
     category = models.ForeignKey(
         'Category',

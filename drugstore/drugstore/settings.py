@@ -41,12 +41,15 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     "main.apps.MainConfig",
-    "registration.apps.RegistrationConfig"
+    "registration.apps.RegistrationConfig",
+    'rest_framework',
+    'apiv1.apps.Apiv1Config'
 ]
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
+    "django.middleware.locale.LocaleMiddleware",
     "django.middleware.common.CommonMiddleware",
     "django.middleware.csrf.CsrfViewMiddleware",
     "django.contrib.auth.middleware.AuthenticationMiddleware",
@@ -112,7 +115,7 @@ LANGUAGE_CODE = "ru"
 
 TIME_ZONE = "UTC"
 
-USE_I18N = False
+USE_I18N = True
 
 USE_TZ = True
 

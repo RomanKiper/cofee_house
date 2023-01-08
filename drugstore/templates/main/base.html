@@ -1,4 +1,5 @@
 {% load static %}
+{% load i18n %}
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -26,19 +27,19 @@
         <!-- Navigation-->
         <nav class="navbar navbar-expand-lg navbar-dark py-lg-4" id="mainNav">
             <div class="container">
-                <a class="navbar-brand text-uppercase fw-bold d-lg-none" href="{% url 'index' %}">COFFEE HOUSE</a>
+                <a class="navbar-brand text-uppercase fw-bold d-lg-none" href="{% url 'index' %}">{% translate 'COFFEE HOUSE' %}</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav mx-auto">
                         <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="{% url 'index' %}">ГЛАВНАЯ</a></li>
                         <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="{% url 'about' %}">О НАС</a></li>
                         <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="{% url 'products' %}">ПРОДУКТЫ</a></li>
-                        <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="{% url 'store' %}">КОНТАКТЫ/РАСПИСАНИЕ</a></li>
+                        <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="{% url 'store' %}">КОНТАКТЫ/РАССПИСАНИЕ</a></li>
                         {% if not user.is_authenticated %}
-                        <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="{% url 'signup' %}">РЕГИСТАРЦИЯ</a></li>
+                        <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="{% url 'signup' %}">РЕГИСТРАЦИЯ</a></li>
                         <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="{% url 'signin' %}">АВТОРИЗАЦИЯ</a></li>
                         {% else %}
-                        <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="{% url 'logout' %}">ВЫЙТИ</a></li>
+                        <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="{% url 'logout' %}">{% translate 'LOG OUT' %}</a></li>
                         {% endif %}
                     </ul>
                 </div>
